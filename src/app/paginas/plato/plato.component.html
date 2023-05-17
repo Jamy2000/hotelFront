@@ -1,0 +1,59 @@
+<h1 matDialogTitle>Registrar Datos del Plato </h1>
+<br>
+<div mat-dialog-content>
+<body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1></h1> 
+			</div>
+
+			<div class="login-form"  [formGroup]="menuForm">
+				<p>
+					<mat-form-field appearance="fill">
+						
+					  <mat-label>Nombre del Plato</mat-label>
+					  <input matInput placeholder=" " type="text"  formControlName="descripcion">
+					  
+					  <mat-hint>Campo requerido</mat-hint>
+					</mat-form-field>
+				  </p>
+				  
+				  
+
+				  
+
+ 
+
+				  <mat-form-field appearance="outline">
+					<mat-label>Tipo de Menu</mat-label>
+					<mat-select placeholder="Tipo Menu"  formControlName="id_tipomenu" (Change)="getId_Tipomenu()" >					
+					<mat-option  *ngFor="let item of tipomenusss "  [value]="item.id">{{item.tipo}}</mat-option>							  					 
+					</mat-select>
+				  </mat-form-field>
+				  
+			
+				  
+				
+
+				
+				<div mat-dialog-action [align]="'end'"> 
+					<button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+					<button style="margin-left: 8px;" mat-raised-button color="primary"  (click)="addPlato() "  >{{actionBtn}}</button>
+				  
+				   
+				  </div>
+        
+				  
+			</div>
+		</div>
+	</div>
+</body>
+
+<div id="wrapper">
+</div>
+    <br><br><br><br>
+
+	
+
+   

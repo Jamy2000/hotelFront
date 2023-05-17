@@ -1,0 +1,71 @@
+<h1 matDialogTitle>Registrar Datos de usuario </h1>
+<br>
+<div mat-dialog-content>
+<body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1></h1> 
+			</div>
+
+			<div class="login-form"  [formGroup]="usuarioForm">
+				<p>
+					<mat-form-field appearance="fill">
+						
+					  <mat-label>usuario</mat-label>
+					  <input matInput placeholder=" " type="text"  formControlName="usuario">
+					  <mat-icon matSuffix>persona</mat-icon>
+					  <mat-hint>Campo requerido</mat-hint>
+					</mat-form-field>
+				  </p>
+				  
+				  <mat-form-field appearance="fill">
+					<mat-label>Contraseña</mat-label>
+					<input matInput [type]="hide ? 'password' : 'text'"  formControlName="contrasena">
+					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+					  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+					</button>
+				  </mat-form-field>
+
+				  
+
+
+
+				  <mat-form-field appearance="outline">
+					<mat-label>Tipo de Usuario</mat-label>
+					<mat-select placeholder="Tipo Usario"  formControlName="id_tipousuario" (Change)="getId_TipoUsuario()" >					
+					<mat-option  *ngFor="let item of tipo_usuariosss "  [value]="item.id">{{item.tipo}}</mat-option>							  					 
+					</mat-select>
+				  </mat-form-field>
+				  
+				  <mat-form-field appearance="outline">
+					<mat-label>Persona</mat-label>
+					<mat-select placeholder="persona"  formControlName="id_persona" (Change)="getId_Persona()"  >					
+					<mat-option  *ngFor="let item of personassss "   [value]="item.id"  >{{item.nombre}}</mat-option>							  					 
+					</mat-select>
+				  </mat-form-field>
+
+				  
+				
+
+				
+				<div mat-dialog-action [align]="'end'"> 
+					<button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+					<button style="margin-left: 8px;" mat-raised-button color="primary"  (click)="addUsuario() " ><a href="http://localhost:4200/cliente"></a>Guardar</button>
+				  
+				   
+				  </div>
+        
+				  
+			</div>
+		</div>
+	</div>
+</body>
+
+<div id="wrapper">
+</div>
+    <br><br><br><br>
+
+	
+
+   

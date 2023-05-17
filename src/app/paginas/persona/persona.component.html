@@ -1,0 +1,51 @@
+<h1 matDialogTitle> Datos Personales</h1>
+<br>
+<div mat-dialog-content>
+  <form [formGroup]="personaForm">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>nombre</mat-label>
+        <input matInput placeholder="nombre"  formControlName="nombre">
+        <mat-icon matSuffix>persona</mat-icon>
+        
+        <mat-hint>Campo requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>email</mat-label>
+        <input matInput placeholder="email" type="email" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>Campo requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>telefono</mat-label>
+        <input matInput placeholder="telefono" type="text" formControlName="telefono">
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Campo requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>foto</mat-label>
+        <input matInput placeholder="foto" type="string"  formControlName="foto">
+        <mat-icon matSuffix>photo</mat-icon>
+        <mat-hint>Campo requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'"> 
+  <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary"  (click)="addPersona()"  (click)="abrirDialogo()">Guardar</button>
+
+
+</div>
